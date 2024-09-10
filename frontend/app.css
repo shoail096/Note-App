@@ -1,70 +1,65 @@
-*
-{
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-
-#main
-{
-    width:100%;
-    min-height:100vh;
-    background: linear-gradient(150deg, #6A9C89, #33372C); 
+#main {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(150deg, #6a9c89, #33372c);
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     padding-bottom: 50px;
 }
-.note
-{
-    width:400px;
-    height:400px;
-    background-color: #FFAD60;
-    margin:15px;
+
+.note {
+    width: 400px;
+    height: 400px;
+    background-color: #ffad60;
+    margin: 15px;
     margin-top: 55px;
 }
-.tool{
-    width:100%;
+
+.tool {
+    width: 100%;
     background-color: black;
-    color:white;
+    color: white;
     padding: 5px;
-    display:flex;
+    display: flex;
     justify-content: end;
-    
-}
-.tool i
-{
-    padding:5px;
-    cursor:pointer;
-}
-.note textarea
-{
-    border:none;
-    width:100%;
-    height:100%;
-    resize:none;
-    padding:10px;
-    font-size:20px;
-}
-.note textarea:focus
-{
-    border:none;
-    outline:0;
 }
 
-#addBTN
-{
-    position:fixed;
-    right:10px;
-    top:10px;
-    background-color: #EEE2DE !important;
+.tool i {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.note textarea {
+    border: none;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.note textarea:focus {
+    border: none;
+    outline: 0;
+}
+
+#addBTN {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    background-color: #eee2de ;
     color: black;
-    padding:10px;
-    border:0;
-    outline:0;
+    padding: 10px;
+    border: 0;
+    outline: 0;
     border-radius: 10px;
-    font-size:20px;
-
+    font-size: 20px;
 }
 
 @keyframes fadeInScale {
@@ -72,6 +67,7 @@
         opacity: 0;
         transform: scale(0.5);
     }
+
     100% {
         opacity: 1;
         transform: scale(1);
@@ -80,4 +76,33 @@
 
 .fadeInScale {
     animation: fadeInScale 0.5s ease-out;
+}
+
+.note.active {
+    box-shadow: 0 0 15px #FF204E;
+    overflow: hidden; 
+}
+
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1);
+        background-color: #eee2de;
+    }
+    50% {
+        transform: scale(0.9);
+        background-color: #ddd;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #eee2de;
+    }
+}
+
+#addBTN.clicked {
+    animation: clickAnimation 0.2s ease;
+}
+
+#addBTN:hover {
+    background-color: #9290C3; 
+    cursor: pointer;
 }

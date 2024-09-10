@@ -1,1 +1,2 @@
-# Note-App
+# Note-App 
+Built for productivity
